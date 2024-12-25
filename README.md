@@ -1,43 +1,65 @@
-The case study focuses on risk analytics in banking, where the goal is to reduce the risk of losing money when giving loans to customers. Loan companies struggle to lend to people with little or no credit history, which some use to their advantage by defaulting on loans.
+# Credit Risk Analysis - Loan Predictor Model
 
-Imagine you work for a company that lends money to urban customers. Your task is to use Exploratory Data Analysis (EDA) to study loan application data. This helps ensure that capable applicants aren't wrongly rejected and risky ones are identified.
+## Project Overview
 
-When deciding to approve a loan, the company faces two risks:
+This case study focuses on risk analytics in banking, aiming to minimize financial risks associated with loan approvals. Loan companies face challenges in lending to individuals with little or no credit history, which may lead to loan defaults. The objective of this project is to predict loan eligibility based on various factors such as income, credit history, and more, ensuring capable applicants are not wrongly rejected while identifying risky ones.
 
-- If a reliable applicant is rejected, the company loses business.
-- If a risky applicant is approved, the company may lose money.
+### Business Problem
 
-Your job is to predict whether a person is eligible for a loan based on various factors like income, credit history, and more.
+When deciding to approve a loan, the company encounters two primary risks:
 
-----
+1. **Losing Business:** Rejecting reliable applicants leads to missed opportunities.
+2. **Losing Money:** Approving risky applicants may result in defaults.
 
-Approach
+This project employs Exploratory Data Analysis (EDA) and Machine Learning to develop a predictive model for loan eligibility.
 
-Data Understanding and Preprocessing:
+---
 
-- Load the dataset.
-- Explore the features and types of data.
-- Handle missing data.
-- Convert categorical data into numbers.
+## Dataset
 
-Exploratory Data Analysis (EDA):
+**Data Source:** [Loan Prediction Dataset](https://raw.githubusercontent.com/Premalatha-success/Financial-Analytics-Loan-Approval-Prediction/main/loan_prediction.csv)
 
-- Analyze statistics like mean and median.
-- Visualize the data with charts and draw conclusions.
+### Fields in the Dataset
 
-Model Development:
+- `Loan_ID`: Unique identifier for the loan
+- `Gender`: Gender of the applicant
+- `Married`: Marital status
+- `Dependents`: Number of dependents
+- `Education`: Educational qualification
+- `Self_Employed`: Employment status
+- `ApplicantIncome`: Applicant’s income
+- `CoapplicantIncome`: Co-applicant’s income
+- `LoanAmount`: Loan amount
+- `Loan_Amount_Term`: Term of the loan
+- `Credit_History`: Credit history of the applicant
+- `Property_Area`: Area of the property
+- `Loan_Status`: Loan approval status (Target variable)
 
-- Split data into training and testing sets.
-- Train and test several machine learning models, such as Logistic Regression and Decision Trees.
-- Model Selection and Tuning:
+Key libraries include:
 
-Compare models using cross-validation.
+- **Python**
+- **Pandas, NumPy**
+- **Matplotlib, Seaborn**
+- **Scikit-learn**
+- 
+## Model Training
 
-- Choose the best model and fine-tune it for better performance.
+The project implements and compares the following classifiers:
 
-Model Evaluation:
+- **Logistic Regression:** A linear model for binary classification tasks.
+- **K-Nearest Neighbors (KNN):** A non-parametric method for classification and regression.
+- **Support Vector Classifier (SVC):** A supervised model that finds the optimal hyperplane for classification.
+- **Decision Tree Classifier:** A tree-based model for decision-making tasks.
+- **Bagging Classifier:** An ensemble method combining multiple classifiers to reduce variance.
+- **Gradient Boosting Classifier:** A boosting algorithm that builds models sequentially.
+- **AdaBoost Classifier:** A boosting technique focusing on correcting errors of previous models.
 
-- Test the final model’s performance.
-- Analyze key metrics to understand how well it works.
+## Evaluation
 
-Conclusion: Summarize the findings and results.
+The models were evaluated using the following metrics:
+
+- **Accuracy:** Measures the percentage of correctly classified instances.
+- **Precision:** Indicates the proportion of true positive predictions among all positive predictions.
+- **Recall:** Represents the ability of the model to identify all relevant instances.
+- **F1 Score:** Provides a harmonic mean of precision and recall.
+
